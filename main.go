@@ -47,7 +47,7 @@ func main() {
 
 	mccList := []string{"5812", "5411"}
 	mccSum := card.SumByMCC(transactions, mccList)
-	fmt.Println(mccSum)
+	fmt.Println(mccSum, transactions)
 
 	category := card.TranslateMCC(cards[0].Transactions[2].Mcc)
 	fmt.Println(category)
