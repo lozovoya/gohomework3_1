@@ -28,7 +28,7 @@ func main() {
 
 	transactions := []card.Transactions{
 		{1, 735_55, "Expense", "5812", "Finished", time.Now().Unix()},
-		{2, 2_000_00, "Income", "87658", "Processing", time.Now().Unix()},
+		{2, 2_000_00, "Income", "8765", "Processing", time.Now().Unix()},
 		{3, 1_203_91, "Expense", "5411", "Finished", time.Now().Unix()},
 		{4, 6_000_00, "Expense", "5411", "Finished", time.Now().Unix()},
 		{5, 16_000_00, "Expense", "5812", "Finished", time.Now().Unix()},
@@ -47,5 +47,8 @@ func main() {
 
 	mccList := []string{"5812", "5411"}
 	mccSum := card.SumByMCC(transactions, mccList)
-	fmt.Println(mccSum)
+	fmt.Println(mccSum, transactions)
+
+	category := card.TranslateMCC(cards[0].Transactions[2].Mcc)
+	fmt.Println(category)
 }
