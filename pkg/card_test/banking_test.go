@@ -14,19 +14,12 @@ import (
 
 //mccList := []string{"5812", "5411"}
 func ExampleSumByMCC() {
-	fmt.Println(card.SumByMCC(
-	[{
-		{
-			4, 6_000_00, "Expense", "5411", "Finished", time.Now().Unix()
-		},
-		{
-			5, 16_000_00, "Expense", "5812", "Finished", time.Now().Unix()
-		},
-		{
-			6, 16_000_00, "Expense", "5812", "Finished", time.Now().Unix()
-		},
-	}], ["5812", "5411"] ))
+	fmt.Println(card.SumByMCC([]card.Transactions{
+		{4, 6_000_00, "Expense", "5411", "Finished", time.Now().Unix()},
+		{5, 16_000_00, "Expense", "5812", "Finished", time.Now().Unix()},
+		{6, 16_000_00, "Expense", "5812", "Finished", time.Now().Unix()},
+	}, []string{"5812", "5411"}))
 
 	// Output:
-	// 32000000
+	// 3800000
 }
